@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather app</title>
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css}"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{http://localhost:8080/style.css}">
+
+
+
+</head>
+<body>
+<div class="header">
+    <h1> Weather application </h1>
+    <div class="searchBar">
+        <form th:action="@{/}" method="get">
+            <input type="text" name="city" placeholder="Search for a city..">
+            <button type="submit"> Search</button>
+        </form>
+    </div>
+</div>
+
+<div class="navbar">
+    <a th:href="@{/}"> Home </a>
+    <a th:href="@{/historicalData}">Historical data</a>
+</div>
+
+<div class="content">
+    <div class="table">
+        <table class="table table-striped">
+            <thead>
+            <th scope="col"> Time and date</th>
+            <th> City</th>
+            <th></th>
+            </thead>
+            <tbody>
+            <tr th:each="allWeather :${historicalWeather}">
+                <td class="dateTime" th:text="${allWeather?.datetimeCreated}"></td>
+                <td th:text="${allWeather?.name}"></td>
+                <td>
+                    <a th:href="@{'/historicalData/' + ${allWeather?.ID}}" type="button" class="btn btn-dark"> See
+                        details </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

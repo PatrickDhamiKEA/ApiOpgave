@@ -1,0 +1,45 @@
+.navbar {
+    background-color: darkolivegreen;
+    border-radius: 5px;
+    font-family: "Javanese Text";
+}
+
+a {
+    color: white;
+    text-decoration: underline;
+}
+
+.searchBar{
+    text-align: center;
+}
+
+.header{
+    background-color: darkcyan;
+    border-radius: 5px;
+    height: 200px;
+    text-align: center;
+    font-family: "Javanese Text";
+    padding-top: 50px;
+
+}
+
+body{
+   background-color: black;
+    text-align: center;
+    font-family: "Javanese Text";
+}
+
+h3 {
+    color: white;
+    padding-top: 20px;
+}
+
+td {
+    color: white;
+
+}
+
+tr {
+    color: white;
+
+}

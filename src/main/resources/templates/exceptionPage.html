@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>An Error happened</title>
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css}"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{http://localhost:8080/style.css}">
+</head>
+<body>
+<div class="header">
+    <h1> Weather application </h1>
+    <div class="searchBar">
+        <form th:action="@{/}" method="get">
+            <input type="text" name="city" placeholder="Search for a city..">
+            <button type="submit"> Search</button>
+        </form>
+    </div>
+</div>
+
+<div class="navbar">
+    <a th:href="@{/}"> Home </a>
+    <a th:href="@{/historicalData}">Historical data</a>
+</div>
+
+<h1 th:text="${message}"> </h1>
+
+</body>
+</html>
